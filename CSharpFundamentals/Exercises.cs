@@ -7,6 +7,101 @@ namespace CSharpFundamentals
     {
         static void Main (string[] args)
         {
+            
+            #region Exercise 1
+
+            Console.WriteLine("Please enter a number");
+
+            ex1UserInfo = Console.ReadLine();
+            ex1Number = Convert.ToInt32(ex1UserInfo);
+
+
+            if (ex1Number >= 1 && ex1Number <= 10)
+            {
+                Console.WriteLine("Valid");
+            }
+            else
+            {
+                Console.WriteLine("Invalid");
+            }
+
+            #endregion
+
+            #region Exercise 2
+
+            Console.WriteLine("Please enter two numbers");
+
+            ex2UserNumber1 = Console.ReadLine();
+            ex2Number1 = Convert.ToInt32(ex2UserNumber1);
+
+            ex2UserNumber2 = Console.ReadLine();
+            ex2Number2 = Convert.ToInt32(ex2UserNumber2);
+
+            if (ex2Number1 > ex2Number2)
+            {
+                Console.WriteLine(ex2Number1);
+            }
+            else
+            {
+                Console.WriteLine(ex2Number2);
+            }
+
+            #endregion
+
+            #region Exercise 3
+
+            Console.WriteLine("Please enter image width then image height");
+
+            ex3UserWidth = Console.ReadLine();
+            ex3Width = Convert.ToInt32(ex3UserWidth);
+
+            ex3UserHeight = Console.ReadLine();
+            ex3Height = Convert.ToInt32(ex3UserHeight);
+
+            if (ex3Width > ex3Height)
+            {
+                Console.WriteLine("The image is landscape");
+            }
+            else
+            {
+                Console.WriteLine("The image is portrait");
+            }
+
+            #endregion
+
+            #region Exercise 4
+
+            Console.WriteLine("Please enter the speed limit");
+
+            ex1UserInfo = Console.ReadLine();
+            speedLimit = Convert.ToInt32(ex1UserInfo);
+
+            Console.WriteLine("Please enter the car speed");
+
+            ex1UserInfo = Console.ReadLine();
+            carSpeed = Convert.ToInt32(ex1UserInfo);
+
+            if (carSpeed <= speedLimit)
+            {
+                Console.WriteLine("Ok");
+
+            }
+            else
+            {
+                speedOver = carSpeed - speedLimit;
+
+                if (speedOver/5 >= 12)
+                {
+                    Console.WriteLine("License suspended!");
+                }
+                else
+                {
+                    Console.WriteLine("You will be notified of your demerit points by mail");
+                }
+            }
+
+            #endregion
+            
             #region Control Flow 2 - Exercise 1
             // Display all numbers divisible by 3 from 1 to 100 then display the overall count.
             /*
