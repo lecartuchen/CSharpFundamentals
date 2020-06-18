@@ -8,11 +8,14 @@ namespace CSharpFundamentals
         static void Main (string[] args)
         {
             #region Control Flow 1 - Exercise 1
+            // Ask the user for a number between 1 and 10
+            // Display "Valid" if within 1 and 10 and "Invalid" otherwise.
             /*
-            Console.WriteLine("Please enter a number");
+            
+            Console.Write("Please enter a number");
 
-            ex1UserInfo = Console.ReadLine();
-            ex1Number = Convert.ToInt32(ex1UserInfo);
+            var ex1UserInfo = Console.ReadLine();
+            var ex1Number = Convert.ToInt32(ex1UserInfo);
 
 
             if (ex1Number >= 1 && ex1Number <= 10)
@@ -27,35 +30,41 @@ namespace CSharpFundamentals
             #endregion 
 
             #region Control Flow 1 - Exercise 2
+            // Ask the user for two random numbers
+            // Display the greater number
             /*
+            
             Console.WriteLine("Please enter two numbers");
 
-            ex2UserNumber1 = Console.ReadLine();
-            ex2Number1 = Convert.ToInt32(ex2UserNumber1);
+            var ex2UserNumber1 = Console.ReadLine();
+            var ex2Number1 = Convert.ToInt32(ex2UserNumber1);
 
-            ex2UserNumber2 = Console.ReadLine();
-            ex2Number2 = Convert.ToInt32(ex2UserNumber2);
+            var ex2UserNumber2 = Console.ReadLine();
+            var ex2Number2 = Convert.ToInt32(ex2UserNumber2);
 
             if (ex2Number1 > ex2Number2)
             {
-                Console.WriteLine(ex2Number1);
+                Console.WriteLine("The greater number is {0}: ", ex2Number1);
             }
             else
             {
-                Console.WriteLine(ex2Number2);
+                Console.WriteLine("The greater number is {0}: ", ex2Number2);
             }
             */
             #endregion
 
             #region Control Flow 1 - Exercise 3
+            // Ask the user for two numbers representing width and height of an image
+            // Display to console landscape, portrait or square.
             /*
+            
             Console.WriteLine("Please enter image width then image height");
 
-            ex3UserWidth = Console.ReadLine();
-            ex3Width = Convert.ToInt32(ex3UserWidth);
+            var ex3UserWidth = Console.ReadLine();
+            var ex3Width = Convert.ToInt32(ex3UserWidth);
 
-            ex3UserHeight = Console.ReadLine();
-            ex3Height = Convert.ToInt32(ex3UserHeight);
+            var ex3UserHeight = Console.ReadLine();
+            var ex3Height = Convert.ToInt32(ex3UserHeight);
 
             if (ex3Width > ex3Height)
             {
@@ -63,22 +72,36 @@ namespace CSharpFundamentals
             }
             else
             {
-                Console.WriteLine("The image is portrait");
+                if (ex3Width < ex3Height)
+                {
+                    Console.WriteLine("The image is portrait");
+                }
+
+                else
+                {
+                    Console.WriteLine("The image is square");
+                }
+                
             }
             */
             #endregion
 
             #region Control Flow 1 - Exercise 4
-            /*
+            // Ask the user for a speed limit then a car speed
+            // Display "Ok" if car speed under speed limit
+            // If car speed is over speed limit then calculate number of demerit points
+            // 1 Demerit point for every 5 miles over the speed limit
+            // Display "License suspended" if number of demerit points are 12 or over
+            
             Console.WriteLine("Please enter the speed limit");
 
-            ex1UserInfo = Console.ReadLine();
-            speedLimit = Convert.ToInt32(ex1UserInfo);
+            var ex1UserInfo = Console.ReadLine();
+             var speedLimit = Convert.ToInt32(ex1UserInfo);
 
             Console.WriteLine("Please enter the car speed");
 
             ex1UserInfo = Console.ReadLine();
-            carSpeed = Convert.ToInt32(ex1UserInfo);
+            var carSpeed = Convert.ToInt32(ex1UserInfo);
 
             if (carSpeed <= speedLimit)
             {
@@ -87,7 +110,7 @@ namespace CSharpFundamentals
             }
             else
             {
-                speedOver = carSpeed - speedLimit;
+                var speedOver = carSpeed - speedLimit;
 
                 if (speedOver/5 >= 12)
                 {
@@ -98,7 +121,7 @@ namespace CSharpFundamentals
                     Console.WriteLine("You will be notified of your demerit points by mail");
                 }
             }
-            */
+  
             #endregion
             
             #region Control Flow 2 - Exercise 1
@@ -216,6 +239,7 @@ namespace CSharpFundamentals
             #endregion
 
             #region Arrays and Lists - Exercise 1
+            /*
             // Ask the user continuously for different names.
             //until the user presses ENTER (without a name)
             //Depending on the number of names, print a message based on Facebook like pattern.
@@ -247,11 +271,11 @@ namespace CSharpFundamentals
                     Console.WriteLine("{0} likes your post", names[0]);
                 }
             }
-
+            */
             #endregion
 
             #region Arrays and Lists - Exercise 2
-
+            /*
             Console.Write("Please enter your name: ");
             var userName = Console.ReadLine();
 
@@ -263,7 +287,7 @@ namespace CSharpFundamentals
             {
 
             }
-
+            */
             #endregion
 
         }
