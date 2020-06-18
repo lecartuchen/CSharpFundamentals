@@ -7,9 +7,8 @@ namespace CSharpFundamentals
     {
         static void Main (string[] args)
         {
-            
-            #region Exercise 1
-
+            #region Control Flow 1 - Exercise 1
+            /*
             Console.WriteLine("Please enter a number");
 
             ex1UserInfo = Console.ReadLine();
@@ -24,11 +23,11 @@ namespace CSharpFundamentals
             {
                 Console.WriteLine("Invalid");
             }
+            */
+            #endregion 
 
-            #endregion
-
-            #region Exercise 2
-
+            #region Control Flow 1 - Exercise 2
+            /*
             Console.WriteLine("Please enter two numbers");
 
             ex2UserNumber1 = Console.ReadLine();
@@ -45,11 +44,11 @@ namespace CSharpFundamentals
             {
                 Console.WriteLine(ex2Number2);
             }
-
+            */
             #endregion
 
-            #region Exercise 3
-
+            #region Control Flow 1 - Exercise 3
+            /*
             Console.WriteLine("Please enter image width then image height");
 
             ex3UserWidth = Console.ReadLine();
@@ -66,11 +65,11 @@ namespace CSharpFundamentals
             {
                 Console.WriteLine("The image is portrait");
             }
-
+            */
             #endregion
 
-            #region Exercise 4
-
+            #region Control Flow 1 - Exercise 4
+            /*
             Console.WriteLine("Please enter the speed limit");
 
             ex1UserInfo = Console.ReadLine();
@@ -99,7 +98,7 @@ namespace CSharpFundamentals
                     Console.WriteLine("You will be notified of your demerit points by mail");
                 }
             }
-
+            */
             #endregion
             
             #region Control Flow 2 - Exercise 1
@@ -251,7 +250,21 @@ namespace CSharpFundamentals
 
             #endregion
 
+            #region Arrays and Lists - Exercise 2
 
+            Console.Write("Please enter your name: ");
+            var userName = Console.ReadLine();
+
+            var count = userName.Length;
+
+            var charArray = new Array[count];
+
+            for (var i =0; i<count; i++)
+            {
+
+            }
+
+            #endregion
 
         }
 
