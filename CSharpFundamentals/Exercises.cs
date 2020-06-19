@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CSharpFundamentals
 {
@@ -27,7 +28,7 @@ namespace CSharpFundamentals
                 Console.WriteLine("Invalid");
             }
             */
-            #endregion 
+            #endregion
 
             #region Control Flow 1 - Exercise 2
             // Ask the user for two random numbers
@@ -124,7 +125,7 @@ namespace CSharpFundamentals
             }
                 */
             #endregion
-            
+
             #region Control Flow 2 - Exercise 1
             // Display all numbers divisible by 3 from 1 to 100 then display the overall count.
             /*
@@ -152,15 +153,24 @@ namespace CSharpFundamentals
             while (true)
             {
                 Console.WriteLine("Please enter a number or OK to exit");
-                userInfo = Console.ReadLine();
+                userInfo = Console.ReadLine().ToUpper();
 
-                if (userInfo == "OK")
+                if ( userInfo =="")
                 {
-                    Console.WriteLine("The sum of all your numbers is: " + sum);
-                    break;
+                    Console.WriteLine("Please enter a number or type OK");
+                }
+                else
+                {
+                    if (userInfo == "OK")
+                                    {
+                                        Console.WriteLine("The sum of all your numbers is: " + sum);
+                                        break;
+                                    }
+
+                                    sum += Convert.ToInt32(userInfo);
                 }
 
-                sum += Convert.ToInt32(userInfo);
+                
             }
             */
             #endregion
@@ -234,7 +244,7 @@ namespace CSharpFundamentals
                     greaterNumber = formattedNumber;
                 }
             }
-
+            
             Console.WriteLine("The greater number is: " + greaterNumber);
             */
             #endregion
@@ -276,19 +286,31 @@ namespace CSharpFundamentals
             #endregion
 
             #region Arrays and Lists - Exercise 2
-            /*
+            // Write a program and ask the user to enter their name
+            // Use an array to reverse the name and then store the result in a new string
+            // Display the reversed name on the console.
+            
             Console.Write("Please enter your name: ");
             var userName = Console.ReadLine();
 
             var count = userName.Length;
 
-            var charArray = new Array[count];
+            var charArray = new string[count];
 
             for (var i =0; i<count; i++)
             {
-
+                charArray.SetValue(userName.Substring(i, 1), i);
+                Console.WriteLine( charArray[i]);
             }
-            */
+
+            Array.Reverse(charArray);
+
+            for (var i = 0; i < count; i++)
+            {
+                Console.Write(charArray[i]);
+            }
+
+            Console.WriteLine();
             #endregion
 
         }
