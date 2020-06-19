@@ -92,7 +92,8 @@ namespace CSharpFundamentals
             // If car speed is over speed limit then calculate number of demerit points
             // 1 Demerit point for every 5 miles over the speed limit
             // Display "License suspended" if number of demerit points are 12 or over
-            
+
+            /*
             Console.WriteLine("Please enter the speed limit");
 
             var ex1UserInfo = Console.ReadLine();
@@ -118,10 +119,10 @@ namespace CSharpFundamentals
                 }
                 else
                 {
-                    Console.WriteLine("You will be notified of your demerit points by mail");
+                    Console.WriteLine("Driving over the speed limit. Report {0} demerit points.", speedOver/5);
                 }
             }
-  
+                */
             #endregion
             
             #region Control Flow 2 - Exercise 1
