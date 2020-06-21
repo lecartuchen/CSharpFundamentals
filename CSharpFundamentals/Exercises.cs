@@ -288,8 +288,8 @@ namespace CSharpFundamentals
             #region Arrays and Lists - Exercise 2
             // Write a program and ask the user to enter their name
             // Use an array to reverse the name and then store the result in a new string
-            // Display the reversed name on the console.
-            
+            // Display the reversed name on CAPITAL on the console.
+            /*
             Console.Write("Please enter your name: ");
             var userName = Console.ReadLine();
 
@@ -300,17 +300,59 @@ namespace CSharpFundamentals
             for (var i =0; i<count; i++)
             {
                 charArray.SetValue(userName.Substring(i, 1), i);
-                Console.WriteLine( charArray[i]);
+                Console.Write("{0} - ", charArray[i]);
             }
+
+            Console.WriteLine();
 
             Array.Reverse(charArray);
 
             for (var i = 0; i < count; i++)
             {
-                Console.Write(charArray[i]);
+                Console.Write(charArray[i].ToUpper());
             }
 
             Console.WriteLine();
+            */
+            #endregion
+
+            #region Arrays and Lists - Exercise 3
+            // Write a program and ask the user to enter 5 numbers
+            // If a number has been previously entered, display an error message and ask the user to re-try
+            // Once the user successfully enters 5 unique numbers, sort them and display the result on the console.
+            /*
+            Console.Write("Please enter 5 different numbers 1 at a time: ");
+            var userData = Console.ReadLine();
+
+            var userNumber = Convert.ToInt32(userData);
+            var numberArray = new int[5];
+            numberArray.SetValue(userNumber, 0);
+
+            for (var i=1; i<5; i++)
+            {
+                var counter = i + 1;
+                Console.Write("Please enter the next ("+ counter +") number: ");
+                userData = Console.ReadLine();
+
+                userNumber = Convert.ToInt32(userData);
+                numberArray.SetValue(userNumber, i);
+
+                if (numberArray[i - 1] == numberArray[i])
+                {
+                    Console.WriteLine("Please enter different numbers. Try again ");
+                    i--;
+                }
+            }
+
+            Console.WriteLine();
+
+            Array.Sort(numberArray);
+
+            for (var i=0; i<5; i++)
+            {
+                Console.Write(numberArray[i] + " "); 
+            }
+            */
             #endregion
 
         }
