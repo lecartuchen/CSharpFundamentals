@@ -355,6 +355,35 @@ namespace CSharpFundamentals
             */
             #endregion
 
+            #region Arrays and Lists - Exercise 4
+            // Write a program and ask the user to continuously enter a number or type "Quit" to exit
+            // The list of numbers may include duplicates
+            // Display the unique numbers that the user has entered
+
+            while (true)
+            {
+                Console.Write("Please enter a number or type QUIT to exit: ");
+                var userInput = Console.ReadLine();
+
+                var userList = new List<string>();
+                userList.Add(userInput);
+
+                if (userInput == "QUIT")
+                {
+                    break;
+                }
+            }
+
+            for (var i=0; i <= userList<>.Length; i++)
+            {
+                if ( userList<i> != userList<i+1>  )
+                {
+
+                }
+            }
+            
+            #endregion
+
         }
 
     }
