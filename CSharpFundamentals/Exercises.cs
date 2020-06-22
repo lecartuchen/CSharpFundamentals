@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace CSharpFundamentals
 {
     public class Exercises
     {
-        static void Main (string[] args)
+        static void Main(string[] args)
         {
             #region Control Flow 1 - Exercise 1
             // Ask the user for a number between 1 and 10
@@ -360,28 +359,70 @@ namespace CSharpFundamentals
             // The list of numbers may include duplicates
             // Display the unique numbers that the user has entered
 
+            var userList = new List<int>();
+            var finalList = new List<int>();
+            string userInput;
+            int userNumber = 0;
+
+
             while (true)
             {
                 Console.Write("Please enter a number or type QUIT to exit: ");
-                var userInput = Console.ReadLine();
-
-                var userList = new List<string>();
-                userList.Add(userInput);
+                userInput = Console.ReadLine();
 
                 if (userInput == "QUIT")
                 {
                     break;
                 }
-            }
 
-            for (var i=0; i <= userList<>.Length; i++)
-            {
-                if ( userList<i> != userList<i+1>  )
+                else
                 {
+                    userNumber = Convert.ToInt32(userInput);
+
+                    userList.Add(userNumber);
 
                 }
             }
-            
+
+            if (userList.Count > 1)
+            {
+                for (var i = userList.Count; i > 0; i--)
+                {
+                    var temp = userList[i - 1];
+
+                    for (var y = userList.Count - 1; y > 0; y--)
+                    {
+                        if (temp != userList[y])
+                        {
+                            finalList.Add(temp);
+                        }
+                    }
+
+                }
+
+                Console.Write("Your unique numbers are: ");
+                foreach (var number in finalList)
+                    {
+                        Console.Write(number);
+                    }
+
+            }
+
+            else
+            {
+                if (userList.Count == 1)
+                {
+                    Console.WriteLine("Your unique number is: {0}", userNumber);
+                }
+
+                else
+                {
+                    Console.WriteLine("Your list is empty");
+                }
+
+
+            }
+
             #endregion
 
         }
