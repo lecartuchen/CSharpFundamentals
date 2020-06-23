@@ -403,7 +403,7 @@ namespace CSharpFundamentals
                 Console.Write("Your unique numbers are: ");
                 foreach (var number in finalList)
                     {
-                        Console.Write(number);
+                        Console.Write(number + " ");
                     }
 
             }
