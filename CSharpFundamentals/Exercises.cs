@@ -390,7 +390,7 @@ namespace CSharpFundamentals
                 {
                     var temp = userList[i - 1];
 
-                    for (var y = userList.Count - 1; y > 0; y--)
+                    for (var y = userList.Count - 1; y >= 0; y--)
                     {
                         if (temp != userList[y])
                         {
@@ -400,10 +400,10 @@ namespace CSharpFundamentals
 
                 }
 
-                Console.Write("Your unique numbers are: ");
+                Console.WriteLine("Your unique numbers are: ");
                 foreach (var number in finalList)
                     {
-                        Console.Write(number);
+                        Console.WriteLine(number);
                     }
 
             }
@@ -419,8 +419,6 @@ namespace CSharpFundamentals
                 {
                     Console.WriteLine("Your list is empty");
                 }
-
-
             }
 
             #endregion
