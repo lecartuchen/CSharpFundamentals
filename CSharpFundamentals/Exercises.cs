@@ -5,6 +5,10 @@ namespace CSharpFundamentals
 {
     public class Exercises
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             #region Control Flow 1 - Exercise 1
@@ -246,7 +250,7 @@ namespace CSharpFundamentals
             
             Console.WriteLine("The greater number is: " + greaterNumber);
             */
-            #endregion
+            #endregion 
 
             #region Arrays and Lists - Exercise 1
             /*
@@ -386,26 +390,27 @@ namespace CSharpFundamentals
 
             if (userList.Count > 1)
             {
-                for (var i = userList.Count; i > 0; i--)
-                {
-                    var temp = userList[i - 1];
+                //for (var i = 1; i <= userlist.count; i++)
+                //{
+                //    var temp = userlist[i - 1];
 
-                    for (var y = userList.Count - 1; y >= 0; y--)
-                    {
-                        if (temp != userList[y])
-                        {
-                            finalList.Add(temp);
-                        }
-                    }
+                //    for (var y = userlist.count - 1; y >= 0; y--)
+                //    {
+                //        if (temp != userlist[y])
+                //        {
+                //            finallist.add(userlist[y]);
+                //        }
+                //    }
 
                 }
 
                 Console.WriteLine("Your unique numbers are: ");
                 foreach (var number in finalList)
-                    {
-                        Console.Write(number);
-                    }
-
+                {
+                    Console.Write(number + " ");
+                    
+                }
+                Console.WriteLine();
             }
 
             else
