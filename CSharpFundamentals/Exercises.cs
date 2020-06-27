@@ -390,17 +390,15 @@ namespace CSharpFundamentals
 
             if (userList.Count > 1)
             {
-                //for (var i = 1; i <= userlist.count; i++)
-                //{
-                //    var temp = userlist[i - 1];
+                for (var i = 0; i < userList.Count; i++)
+                {
+                    var indexFirst = userList.IndexOf(userList[i]);
+                    var indexLast = userList.LastIndexOf(userList[i]);
 
-                //    for (var y = userlist.count - 1; y >= 0; y--)
-                //    {
-                //        if (temp != userlist[y])
-                //        {
-                //            finallist.add(userlist[y]);
-                //        }
-                //    }
+                    if (indexFirst == indexLast)
+                    {
+                        finalList.Add(userList[i]);
+                    }
 
                 }
 
