@@ -363,6 +363,7 @@ namespace CSharpFundamentals
             // The list of numbers may include duplicates
             // Display the unique numbers that the user has entered
 
+            /*
             var userList = new List<int>();
             var finalList = new List<int>();
             string userInput;
@@ -436,6 +437,21 @@ namespace CSharpFundamentals
                     Console.WriteLine("Your list is empty");
                 }
             }
+            */
+            #endregion
+
+            #region Arrays and Lists - Exercise 5
+
+            // Write a program and ask the user to supply a list of comma separated numbers (e.g 5, 1, 9, 2, 10)
+            // If the list is empty or includes less than 5 numbers, display "Invalid List" and
+            // ask the user to re-try; otherwise, display the 3 smallest numbers in the list
+
+                Console.WriteLine("Please provide at least 5 comma separated numbers");
+                var fullString = Console.ReadLine();
+
+                var deWhittenString = fullString.Trim();
+                var splitStringArray = new List<string>();
+
 
             #endregion
 
