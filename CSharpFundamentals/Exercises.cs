@@ -395,6 +395,10 @@ namespace CSharpFundamentals
                     var indexFirst = userList.IndexOf(userList[i]);
                     var indexLast = userList.LastIndexOf(userList[i]);
 
+                    // Testing indexes
+                    //Console.WriteLine("First index of: {0} is: {1}", userList[i], Convert.ToString(indexFirst));
+                    //Console.WriteLine("Last index of: {0} is: {1}", userList[i], Convert.ToString(indexLast));
+
                     if (indexFirst == indexLast)
                     {
                         finalList.Add(userList[i]);
@@ -402,13 +406,22 @@ namespace CSharpFundamentals
 
                 }
 
-                Console.WriteLine("Your unique numbers are: ");
-                foreach (var number in finalList)
+                if (finalList.Count != 0)
                 {
-                    Console.Write(number + " ");
-                    
+                    Console.WriteLine("Your unique numbers are: ");
+                    foreach (var number in finalList)
+                    {
+                        Console.Write(number + " ");
+
+                    }
+                    Console.WriteLine();
                 }
-                Console.WriteLine();
+                else
+                {
+                    Console.WriteLine("There are no unique numbers in the list");
+                }
+
+
             }
 
             else
