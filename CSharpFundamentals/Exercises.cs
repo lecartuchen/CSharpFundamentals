@@ -250,7 +250,7 @@ namespace CSharpFundamentals
             
             Console.WriteLine("The greater number is: " + greaterNumber);
             */
-            #endregion 
+            #endregion
 
             #region Arrays and Lists - Exercise 1
             /*
@@ -446,11 +446,80 @@ namespace CSharpFundamentals
             // If the list is empty or includes less than 5 numbers, display "Invalid List" and
             // ask the user to re-try; otherwise, display the 3 smallest numbers in the list
 
+            var splitStringList = new List<string>();
+
+            int commaCount = 0;
+
+            while (true)
+            {
                 Console.WriteLine("Please provide at least 5 comma separated numbers");
                 var fullString = Console.ReadLine();
 
                 var deWhittenString = fullString.Trim();
-                var splitStringArray = new List<string>();
+
+                if (deWhittenString.Contains(","))
+                {
+                    if (deWhittenString.LastIndexOf(",") > 6)
+                    {
+                        foreach (var letter in deWhittenString)
+                        {
+                            if (letter.Equals(","))
+                            {
+                                commaCount++;
+                            }
+                        }
+
+                        var splitStringArray = new String[commaCount + 1];
+                        splitStringArray = deWhittenString.Split(',');
+
+                        splitStringList.InsertRange(0, splitStringArray);
+
+                        foreach (var item in splitStringList)
+                        {
+                            Console.WriteLine(item);
+                        }
+
+
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("The List of numbers provided is invalid");
+                        Console.WriteLine("Please introduce 5 or more numbers");
+                        Console.WriteLine();
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("The List of numbers provided is invalid");
+                    Console.WriteLine("Please introduce commas between numbers");
+                    Console.WriteLine();
+                }
+
+            }
+
+            var temp = Convert.ToInt32(splitStringList[0]);
+            var finaltrio = new int[3];
+            int smallest;
+
+            for (var i = 1; i < splitStringList.Count; i++)
+            {
+                var number = Convert.ToInt32(splitStringList[i]);
+
+                if (temp < number)
+                {
+                    smallest = temp;
+                }
+                else
+                {
+                    smallest = number;
+                }
+            }
+            /*
+            var smallesToString = Convert.ToString(smallest);
+            var splitStringList2 = splitStringList.RemoveAll(smallesToString);*/
+
+
 
 
             #endregion
