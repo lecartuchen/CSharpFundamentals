@@ -447,15 +447,19 @@ namespace CSharpFundamentals
             // ask the user to re-try; otherwise, display the 3 smallest numbers in the list
 
             var splitStringList = new List<string>();
+            var finaltrio = new int[3];
 
             int commaCount = 0;
+            int smallest = 0;
 
             while (true)
             {
                 Console.WriteLine("Please provide at least 5 comma separated numbers");
                 var fullString = Console.ReadLine();
 
-                var deWhittenString = fullString.Trim();
+                var deWhittenString = fullString.Replace(" ", "");
+
+                //Console.WriteLine(deWhittenString);
 
                 if (deWhittenString.Contains(","))
                 {
@@ -474,10 +478,10 @@ namespace CSharpFundamentals
 
                         splitStringList.InsertRange(0, splitStringArray);
 
-                        foreach (var item in splitStringList)
+                        /*foreach (var item in splitStringList)
                         {
                             Console.WriteLine(item);
-                        }
+                        }*/
 
 
                         break;
@@ -499,8 +503,6 @@ namespace CSharpFundamentals
             }
 
             var temp = Convert.ToInt32(splitStringList[0]);
-            var finaltrio = new int[3];
-            int smallest;
 
             for (var i = 1; i < splitStringList.Count; i++)
             {
@@ -515,11 +517,16 @@ namespace CSharpFundamentals
                     smallest = number;
                 }
             }
-            /*
-            var smallesToString = Convert.ToString(smallest);
-            var splitStringList2 = splitStringList.RemoveAll(smallesToString);*/
 
+            for (var i = 0; i < splitStringList.Count; i++)
+            {
+                splitStringList.Remove(Convert.ToString(smallest));
+            }
 
+            /*foreach (var item in splitStringList)
+            {
+                Console.WriteLine(item);
+            }*/
 
 
             #endregion
