@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CSharpFundamentals
 {
@@ -449,8 +450,8 @@ namespace CSharpFundamentals
             var splitStringList = new List<string>();
             var finaltrio = new int[3];
 
-            int commaCount = 0;
-            int smallest = 0;
+            int commaCount, smallest, secondSmallest, thirdSmallest;
+            commaCount = smallest = secondSmallest = thirdSmallest = 0;
 
             while (true)
             {
@@ -502,19 +503,22 @@ namespace CSharpFundamentals
 
             }
 
+            // Determines the smallest number in the list
+            // Takes out the smallest number from the list
+
             var temp = Convert.ToInt32(splitStringList[0]);
 
             for (var i = 1; i < splitStringList.Count; i++)
             {
                 var number = Convert.ToInt32(splitStringList[i]);
 
-                if (temp < number)
+                if (temp <= number)
                 {
                     smallest = temp;
                 }
                 else
                 {
-                    smallest = number;
+                    smallest = temp = number;
                 }
             }
 
@@ -523,11 +527,77 @@ namespace CSharpFundamentals
                 splitStringList.Remove(Convert.ToString(smallest));
             }
 
-            /*foreach (var item in splitStringList)
+            Console.Write("First list: ");
+            foreach (var item in splitStringList)
             {
-                Console.WriteLine(item);
-            }*/
+                Console.Write(item + " ");
+            }
+            Console.WriteLine();
 
+            // Determines the SECOND smallest number in the list
+            // Takes out the SECOND smallest number from the list
+
+            temp = Convert.ToInt32(splitStringList[0]);
+
+            for (var i = 1; i < splitStringList.Count; i++)
+            {
+                var number = Convert.ToInt32(splitStringList[i]);
+
+                if (temp <= number)
+                {
+                    secondSmallest = temp;
+                }
+                else
+                {
+                    secondSmallest = temp = number;
+                }
+            }
+
+            for (var i = 0; i < splitStringList.Count; i++)
+            {
+                splitStringList.Remove(Convert.ToString(secondSmallest));
+            }
+
+            Console.Write("Second list: ");
+            foreach (var item in splitStringList)
+            {
+                Console.Write(item + " ");
+            }
+            Console.WriteLine();
+
+            // Determines the THIRD smallest number in the list
+            // Takes out the THIRD smallest number from the list
+
+            temp = Convert.ToInt32(splitStringList[0]);
+
+            for (var i = 1; i < splitStringList.Count; i++)
+            {
+                var number = Convert.ToInt32(splitStringList[i]);
+
+                if (temp <= number)
+                {
+                    thirdSmallest = temp;
+                }
+                else
+                {
+                    thirdSmallest = temp = number;
+                }
+            }
+
+            for (var i = 0; i < splitStringList.Count; i++)
+            {
+                splitStringList.Remove(Convert.ToString(thirdSmallest));
+            }
+
+            Console.Write("Third list: ");
+            foreach (var item in splitStringList)
+            {
+                Console.Write(item + " ");
+            }
+            Console.WriteLine();
+
+
+            Console.WriteLine("The three smallest numbers in the list are: {0}, {1} and {2}.", smallest, secondSmallest, thirdSmallest);
 
             #endregion
 
