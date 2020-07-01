@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CSharp1Exercises.ArraysAndLists
+namespace CSharpFundamentals
 {
     public class Lists
     {

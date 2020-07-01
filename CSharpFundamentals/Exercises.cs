@@ -447,7 +447,7 @@ namespace CSharpFundamentals
             // If the list is empty or includes less than 5 numbers, display "Invalid List" and
             // ask the user to re-try; otherwise, display the 3 smallest numbers in the list
 
-            var splitStringList = new List<string>();
+            /*var splitStringList = new List<string>();
             var finaltrio = new int[3];
 
             int commaCount, smallest, secondSmallest, thirdSmallest;
@@ -482,7 +482,7 @@ namespace CSharpFundamentals
                         /*foreach (var item in splitStringList)
                         {
                             Console.WriteLine(item);
-                        }*/
+                        }
 
 
                         break;
@@ -597,7 +597,50 @@ namespace CSharpFundamentals
             Console.WriteLine();
 
 
-            Console.WriteLine("The three smallest numbers in the list are: {0}, {1} and {2}.", smallest, secondSmallest, thirdSmallest);
+            Console.WriteLine("The three smallest numbers in the list are: {0}, {1} and {2}.", smallest, secondSmallest, thirdSmallest);*/
+
+            #endregion
+
+            #region Mosh_Exercise 5
+
+                string[] elements;
+                while (true)
+                {
+                    Console.Write("Enter a list of comma-separated numbers: ");
+                    var input = Console.ReadLine();
+
+                    if (!String.IsNullOrWhiteSpace(input))
+                    {
+                        elements = input.Split(',');
+                        if (elements.Length >= 5)
+                            break;
+                    }
+
+                    Console.WriteLine("Invalid List");
+                }
+
+                var numbers = new List<int>();
+                foreach (var number in elements)
+                    numbers.Add(Convert.ToInt32(number));
+
+                var smallests = new List<int>();
+                while (smallests.Count < 3)
+                {
+                    // Assume the first number is the smallest
+                    var min = numbers[0];
+                    foreach (var number in numbers)
+                    {
+                        if (number < min)
+                            min = number;
+                    }
+                    smallests.Add(min);
+
+                    numbers.Remove(min);
+                }
+
+                Console.WriteLine("The 3 smallest numbers are: ");
+                foreach (var number in smallests)
+                    Console.WriteLine(number);
 
             #endregion
 
