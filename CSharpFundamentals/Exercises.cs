@@ -447,7 +447,7 @@ namespace CSharpFundamentals
             // If the list is empty or includes less than 5 numbers, display "Invalid List" and
             // ask the user to re-try; otherwise, display the 3 smallest numbers in the list
 
-            var splitStringList = new List<string>();
+            /*var splitStringList = new List<string>();
             var finaltrio = new int[3];
 
             int commaCount, smallest, secondSmallest, thirdSmallest;
@@ -479,10 +479,10 @@ namespace CSharpFundamentals
 
                         splitStringList.InsertRange(0, splitStringArray);
 
-                        /*foreach (var item in splitStringList)
+                        foreach (var item in splitStringList)
                         {
                             Console.WriteLine(item);
-                        }*/
+                        }
 
 
                         break;
@@ -597,7 +597,39 @@ namespace CSharpFundamentals
             Console.WriteLine();
 
 
-            Console.WriteLine("The three smallest numbers in the list are: {0}, {1} and {2}.", smallest, secondSmallest, thirdSmallest);
+            Console.WriteLine("The three smallest numbers in the list are: {0}, {1} and {2}.", smallest, secondSmallest, thirdSmallest);*/
+
+            #endregion
+
+            #region Working with Text - Exercise 1
+
+            // Write a program and ask the user to enter a few numbers separated by a hyphen.
+            // Work out if the numbers are consecutive. For example, if the input is "5-6-7-8-9" or
+            // "20-19-18-17-16", display a message: "Consecutive"; otherwise, display "Not Consecutive".
+
+            Console.WriteLine("Please provide a few numbers separated by a hyphen");
+            var inputString = Console.ReadLine();
+
+            var inputStringNumbers = inputString.Split('-');
+            var inputNumbers = new int[inputStringNumbers.Length];
+
+            for (var i=0; i<inputStringNumbers.Length; i++)
+            {
+                inputNumbers = Convert.ToInt32(inputStringNumbers[i]);
+            }
+
+            for (var i = 0; i < inputNumbers.Length - 1; i++)
+            {
+                var tempNumber = Convert.ToInt32(inputNumbers[i]);
+
+                if (tempNumber == inputNumbers[i+1])
+                {
+                    Console.WriteLine("Not Consecutive");
+                }
+            }
+
+
+
 
             #endregion
 
