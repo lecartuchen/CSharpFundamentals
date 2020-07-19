@@ -612,24 +612,47 @@ namespace CSharpFundamentals
 
             var inputStringNumbers = inputString.Split('-');
             var inputNumbers = new int[inputStringNumbers.Length];
+            int i = 0;
+            var result = true;
 
-            for (var i=0; i<inputStringNumbers.Length; i++)
+            foreach (var num in inputStringNumbers)
             {
-                inputNumbers = Convert.ToInt32(inputStringNumbers[i]);
+                inputNumbers[i] = Convert.ToInt32(num);
+                i++;
             }
 
-            for (var i = 0; i < inputNumbers.Length - 1; i++)
+            for (i = 0; i < inputNumbers.Length - 1; i++)
             {
-                var tempNumber = Convert.ToInt32(inputNumbers[i]);
+                var tempNumber = inputNumbers[i];
 
-                if (tempNumber == inputNumbers[i+1])
+                if (tempNumber + 1 != inputNumbers[i + 1])
                 {
-                    Console.WriteLine("Not Consecutive");
+                    result = false;
+                    break;
                 }
             }
 
+            for (i = inputNumbers.Length - 1; i > 0; i--)
+            {
+                var tempNumber = inputNumbers[i];
 
+                if (tempNumber - 1 != inputNumbers[i - 1])
+                {
+                    result = false;
+                    break;
+                }
+            }
 
+            if (result)
+            {
+                Console.WriteLine("Consecutive");
+                Console.ReadLine();
+            }
+            else
+            {
+                Console.WriteLine("Not Consecutive");
+                Console.ReadLine();
+            }
 
             #endregion
 
