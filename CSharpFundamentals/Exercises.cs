@@ -621,7 +621,7 @@ namespace CSharpFundamentals
                 i++;
             }
 
-            for (i = 0; i < inputNumbers.Length - 1; i++)
+            for (i = 0; i < (inputNumbers.Length - 1); i++)
             {
                 var tempNumber = inputNumbers[i];
 
@@ -632,11 +632,12 @@ namespace CSharpFundamentals
                 }
             }
 
-            for (i = inputNumbers.Length - 1; i > 0; i--)
+            for (i = 0; i < (inputNumbers.Length - 1); i++)
             {
                 var tempNumber = inputNumbers[i];
+                Console.WriteLine("{0} {1}", i, tempNumber );
 
-                if (tempNumber - 1 != inputNumbers[i - 1])
+                if (tempNumber -1 != inputNumbers[i + 1])
                 {
                     result = false;
                     break;
