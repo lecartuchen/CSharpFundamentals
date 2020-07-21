@@ -607,13 +607,14 @@ namespace CSharpFundamentals
             // Work out if the numbers are consecutive. For example, if the input is "5-6-7-8-9" or
             // "20-19-18-17-16", display a message: "Consecutive"; otherwise, display "Not Consecutive".
 
-            Console.WriteLine("Please provide a few numbers separated by a hyphen");
+            /*Console.WriteLine("Please provide a few numbers separated by a hyphen");
             var inputString = Console.ReadLine();
 
             var inputStringNumbers = inputString.Split('-');
             var inputNumbers = new int[inputStringNumbers.Length];
             int i = 0;
-            var result = true;
+            bool resultIncrease = true;
+            bool resultDecrease = true;
 
             foreach (var num in inputStringNumbers)
             {
@@ -621,43 +622,75 @@ namespace CSharpFundamentals
                 i++;
             }
 
+            // CHECK IF INCREASING CONSECUTIVE
             for (i = 0; i < (inputNumbers.Length - 1); i++)
             {
                 var tempNumber = inputNumbers[i];
 
-                if (tempNumber + 1 != inputNumbers[i + 1])
+                if ((tempNumber + 1) != inputNumbers[i + 1])
                 {
-                    result = false;
+                    resultIncrease = false;
                     break;
                 }
             }
 
+            // CHECK IF DECREASING CONSECUTIVE
             for (i = 0; i < (inputNumbers.Length - 1); i++)
             {
                 var tempNumber = inputNumbers[i];
-                Console.WriteLine("{0} {1}", i, tempNumber );
 
-                if (tempNumber -1 != inputNumbers[i + 1])
+                if (tempNumber - 1 != inputNumbers[i + 1])
                 {
-                    result = false;
+                    resultDecrease = false;
                     break;
                 }
             }
 
-            if (result)
+            if (resultIncrease || resultDecrease)
             {
                 Console.WriteLine("Consecutive");
-                Console.ReadLine();
             }
             else
             {
                 Console.WriteLine("Not Consecutive");
-                Console.ReadLine();
             }
-
+            */
             #endregion
 
-        }
+            #region Working with Text - Exercise 2
 
+            // Write a program and ask the user to enter a few numbers separated by a hyphen.
+            // If the user simply presses Enter, without supplying an input, exit immediately;
+            // otherwise, check to see if there are duplicates. If so, display "Duplicate" on the console.
+
+            /*Console.WriteLine("Please enter a few numbers separated by a hyphen");
+            var inputString = Console.ReadLine();
+
+            if (inputString.Length != 0)
+            {
+                var inputStringArray = inputString.Split('-');
+
+                foreach (var num in inputStringArray)
+                {
+                    var counter = 0;
+
+                    for (int i = 0; i < inputStringArray.Length; i++)
+                    {
+                        if (num == inputStringArray[i])
+                        {
+                            counter++;      
+                        }
+                    }
+
+                    if (counter > 1)
+                    {
+                        Console.WriteLine("There are {0} Duplicates", counter);
+                        break;
+                    }
+                }
+            }*/
+
+            #endregion
+        }
     }
 }
