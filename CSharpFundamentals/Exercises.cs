@@ -699,7 +699,11 @@ namespace CSharpFundamentals
             // otherwise, display "Invalid Time". If the user doesn't provide any values, consider it as invalid time.
 
             Console.WriteLine("Please enter a time value in the 24-hour format");
-            var inputTimeValue = Console.ReadLine();
+            var inputStringValue = Console.ReadLine();
+
+            var inputTimeValue = TimeSpan.Parse(inputStringValue);
+
+            Console.WriteLine(inputTimeValue.ToString("HH"));
 
             #endregion
         }
