@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 
 namespace CSharpFundamentals
 {
@@ -693,17 +694,66 @@ namespace CSharpFundamentals
             #endregion
 
             #region Working with Text - Exercise 3
-
+            /*
             // Write a program and ask the user to enter a time value in the 24-hour time format (e.g. 19:00).
             // A valid time should be between 00:00 and 23:59. If the time is valid, display "Ok";
             // otherwise, display "Invalid Time". If the user doesn't provide any values, consider it as invalid time.
 
-            Console.WriteLine("Please enter a time value in the 24-hour format");
-            var inputStringValue = Console.ReadLine();
+            Console.Write("Enter time: ");
+            var input = Console.ReadLine();
 
-            var inputTimeValue = TimeSpan.Parse(inputStringValue);
+            if (String.IsNullOrWhiteSpace(input))
+            {
+                Console.WriteLine("Invalid Time");
+                return;
+            }
 
-            Console.WriteLine(inputTimeValue.ToString("HH"));
+            var components = input.Split(':');
+            if (components.Length != 2)
+            {
+                Console.WriteLine("Invalid Time");
+                return;
+            }
+
+            try
+            {
+                var hour = Convert.ToInt32(components[0]);
+                var minute = Convert.ToInt32(components[1]);
+
+                if (hour >= 0 && hour <= 23 && minute >= 0 && minute <= 59)
+                    Console.WriteLine("Ok");
+                else
+                    Console.WriteLine("Invalid Time");
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Invalid Time");
+            }*/
+
+            #endregion
+
+            #region Working with Text - Exercise 4
+
+            /// <summary>
+            /// Write a program and ask the user to enter a few words separated by a space.
+            /// Use the words to create a variable name with PascalCase.
+            /// For example, if the user types: "number of students", display "NumberOfStudents".
+            /// Make sure that the program is not dependent on the input.
+            /// So, if the user types "NUMBER OF STUDENTS", the program should still display "NumberOfStudents".
+            /// </summary>
+
+            Console.WriteLine("Please enter a few words separated by a space");
+            var input = Console.ReadLine();
+
+            var words = input.Split(' ');
+            var lowerCase = new Array[words.Length];
+            var i = 0;
+
+            foreach (var word in words)
+            {
+                i++;
+                Console.WriteLine(lowerCase[i]);
+            }
 
             #endregion
         }
