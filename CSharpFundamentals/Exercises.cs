@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading;
 
 namespace CSharpFundamentals
@@ -749,11 +750,11 @@ namespace CSharpFundamentals
             var lowerCase = new String[words.Length];
             var capitalize = new String[words.Length];
             var i = 0;
-            string result="";
+            var jointResult = new StringBuilder();
 
             foreach (var word in words)
             {
-                lowerCase[i]=word;
+                lowerCase[i].ToLower(word);
                 var firstLetter = lowerCase[i].ElementAt(0);
                 capitalize[i] = lowerCase[i].Replace(firstLetter, Char.ToUpper(firstLetter));
                 i++;
@@ -761,10 +762,10 @@ namespace CSharpFundamentals
 
             foreach (var word in capitalize)
             {
-                result.Concat(word);
+                jointResult.Append(word);
             }
 
-            Console.WriteLine(result);
+            Console.WriteLine(jointResult);
 
             #endregion
         }
