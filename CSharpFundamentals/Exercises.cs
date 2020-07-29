@@ -748,19 +748,21 @@ namespace CSharpFundamentals
 
             var words = input.Split(' ');
             var lowerCase = new String[words.Length];
-            var capitalize = new String[words.Length];
+            var deCap = new String[words.Length];
+            var capitalized = new String[words.Length];
             var i = 0;
             var jointResult = new StringBuilder();
 
             foreach (var word in words)
             {
-                lowerCase[i].ToLower(word);
-                var firstLetter = lowerCase[i].ElementAt(0);
-                capitalize[i] = lowerCase[i].Replace(firstLetter, Char.ToUpper(firstLetter));
+                lowerCase[i] = word.ToLower();
+                var firstLetter = Char.ToUpper(lowerCase[i].ElementAt(0));
+                deCap[i] = lowerCase[i].Remove(0, 1);
+                capitalized[i] = deCap[i].Insert(0, Convert.ToString(firstLetter));
                 i++;
             }
 
-            foreach (var word in capitalize)
+            foreach (var word in capitalized)
             {
                 jointResult.Append(word);
             }
