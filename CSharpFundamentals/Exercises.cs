@@ -695,11 +695,12 @@ namespace CSharpFundamentals
             #endregion
 
             #region Working with Text - Exercise 3
-            /*
+
             // Write a program and ask the user to enter a time value in the 24-hour time format (e.g. 19:00).
             // A valid time should be between 00:00 and 23:59. If the time is valid, display "Ok";
             // otherwise, display "Invalid Time". If the user doesn't provide any values, consider it as invalid time.
 
+            /*
             Console.Write("Enter time: ");
             var input = Console.ReadLine();
 
@@ -743,6 +744,7 @@ namespace CSharpFundamentals
             /// So, if the user types "NUMBER OF STUDENTS", the program should still display "NumberOfStudents".
             /// </summary>
 
+            /*
             Console.WriteLine("Please enter a few words separated by a space");
             var input = Console.ReadLine();
 
@@ -768,6 +770,21 @@ namespace CSharpFundamentals
             }
 
             Console.WriteLine(jointResult);
+            */
+            #endregion
+
+            #region Working with Text - Exercise 5
+
+            /// <summary>
+            /// Write a program and ask the user to enter an English word.
+            /// Count the number of vowels (a, e, o, u, i) in the word.
+            /// So, if the user enters "inadequate", the program should display 6 on the console.
+            /// </summary>
+
+            Console.WriteLine("Please enter a word:");
+            var input = Console.ReadLine();
+
+            var letter = new string[input.Length];
 
             #endregion
         }
