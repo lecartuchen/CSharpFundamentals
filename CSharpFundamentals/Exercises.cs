@@ -15,7 +15,7 @@ namespace CSharpFundamentals
         /// </summary>
 
         #region Control Flow 1 - Exercise 1
-
+        /*
         public void Exercise1()
         {
             Console.Write("Please enter a number");
@@ -33,6 +33,7 @@ namespace CSharpFundamentals
                 Console.WriteLine("Invalid");
             }
         }
+        */
         #endregion
 
         #region Control Flow 1 - Exercise 2
@@ -780,25 +781,28 @@ namespace CSharpFundamentals
         /// So, if the user enters "inadequate", the program should display 6 on the console.
         /// </summary>
         /*
-        Console.WriteLine("Please enter a word:");
-        var input = Console.ReadLine();
-
-        var letter = new char[input.Length];
-        var vocals = new char[5] { 'a', 'e', 'i', 'o', 'u' };
-        byte counter = 0;
-
-        for (int i = 0; i < input.Length; i++)
+        public static void Main()
         {
-            letter[i] = input.ElementAt(i);
+            Console.WriteLine("Please enter a word:");
+            var inputWord = Console.ReadLine().ToLower();
 
-            for (int y = 0; y < vocals.Length; y++)
+            var letter = new char[inputWord.Length];
+            var vocals = new char[5] { 'a', 'e', 'i', 'o', 'u' };
+            byte counter = 0;
+
+            for (int i = 0; i < inputWord.Length; i++)
             {
-                if (letter[i] == vocals[y])
-                    counter++;
-            }
-        }
+                letter[i] = inputWord.ElementAt(i);
 
-        Console.WriteLine("This word has {0} vocals", counter);
+                for (int y = 0; y < vocals.Length; y++)
+                {
+                    if (letter[i] == vocals[y])
+                        counter++;
+                }
+            }
+
+            Console.WriteLine("The word {0} has {1} vocals", inputWord, counter);
+        }
         */
         #endregion
     }
