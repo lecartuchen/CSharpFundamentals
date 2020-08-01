@@ -51,16 +51,15 @@ namespace CSharpFundamentals
             /// </summary>
 
             #region Control Flow 1 - Exercise 3
-
-            
+            /*
             Console.WriteLine("Please enter image width then image height");
 
             var ex3UserWidth = Console.ReadLine();
             var ex3UserHeight = Console.ReadLine();
-            var imageLayout = ImageLayout(ex3UserWidth, ex3UserHeight, result);
+            var imageLayout = ImageLayout(ex3UserWidth, ex3UserHeight);
 
-            Console.WriteLine("The image is {0}", result);
-
+            Console.WriteLine("The image is {0}", imageLayout);
+            */
             #endregion
 
             #region Control Flow 1 - Exercise 4
@@ -797,6 +796,30 @@ namespace CSharpFundamentals
             */
 
             #endregion
+
+            #region SECTION 9: WORKING WITH FILES
+
+            /// <summary>
+            /// Write a program that reads a text file and displays the number of words.
+            /// </summary>
+
+            #region Working with Files - Exercise 1
+
+            var numberOfWords;
+
+            #endregion
+
+            /// <summary>
+            /// Write a program that reads a text file and displays the longest word in the file.
+            /// </summary>
+
+            #region Working with Files - Exercise 2
+
+
+
+            #endregion
+
+            #endregion
         }
 
         /// <summary>
@@ -822,8 +845,7 @@ namespace CSharpFundamentals
 
         /// <summary>
         /// CF1-Ex2-Method
-        /// </summary>
-        
+        /// </summary> 
         public static string GreaterNumber(string ex2UserNumber1, string ex2UserNumber2)
         {
             var ex2Number1 = Convert.ToInt32(ex2UserNumber1);
@@ -842,9 +864,7 @@ namespace CSharpFundamentals
         /// <summary>
         /// CF1-Ex3-Method
         /// </summary>
-        /// 
-
-        public static string ImageLayout(string ex3UserWidth, string ex3UserHeight, string[] result)
+        public static string ImageLayout(string ex3UserWidth, string ex3UserHeight)
         {
             var ex3Width = Convert.ToInt32(ex3UserWidth);
             var ex3Height = Convert.ToInt32(ex3UserHeight);
