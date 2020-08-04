@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections;
+using System.IO;
+using System.Net.Mime;
 
 namespace CSharpFundamentals
 {
@@ -214,8 +217,8 @@ namespace CSharpFundamentals
             Console.WriteLine("Please enter ANY numbers separated by comma");
             var userNumbers = Console.ReadLine();
 
-            var dewhitenen = userNumbers.Replace(" ", "");
-            var formattedText = dewhitenen.Split(',');
+            var dewhitten = userNumbers.Replace(" ", "");
+            var formattedText = dewhitten.Split(',');
             int greaterNumber = 0;
 
             for (int i = 0; i < formattedText.Length; i++)
@@ -805,9 +808,13 @@ namespace CSharpFundamentals
 
             #region Working with Files - Exercise 1
 
-            var numberOfWords;
+            var content = File.ReadAllText(@"C:\Users\lmolina\source\repos\lecartuchen\CSharpFundamentals\UdemyCourse_Dummy-Text-File.txt");
 
-            #endregion
+            var words = content.Split(' ');
+
+                Console.WriteLine("The text file has {0} words", words.Length);
+
+                #endregion
 
             /// <summary>
             /// Write a program that reads a text file and displays the longest word in the file.
