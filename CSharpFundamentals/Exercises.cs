@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CSharpFundamentals
 {
@@ -6,6 +7,84 @@ namespace CSharpFundamentals
     {
         public static void Main(string[] args)
         {
+            #region Initializations
+            var courseNameList = new String[3] { "Beginner", "Intermediate", "Advanced" };
+            var courseNumberList = new byte[3] { 1, 2, 3 };
+            byte sectionsTotalBeginner = 10;
+            byte sectionsTotalIntermediate = 6;
+            var sectionsNameBeginners = new List<string>()
+            {
+                "Introduction",
+                "Introduction to C# and .NET Framework",
+                "Primitive Types and Expressions",
+                "Non-Primitive Types",
+                "Control Flow",
+                "Arrays and Lists",
+                "Working with Dates",
+                "Working with Text",
+                "Working with Files",
+                "Debugging Applications"
+            };
+
+            var sectionsNameIntermediate = new List<string>()
+            {
+                "About this course",
+                "Classes",
+                "Association between Classes",
+                "Inheritance - Second pillar of OOP",
+                "Polymorphism - Third pillar of OOP",
+                "Interfaces"
+            };
+            var sectionsNameAdvanced = new List<string>()
+            {
+                "A",
+                "B",
+                "C"
+            };
+            #endregion
+
+            Console.WriteLine("*** CSHARP COURSES ***");
+            Console.WriteLine();
+
+            foreach (var num in courseNumberList)
+            {
+                Console.WriteLine(num + " - " + courseNameList[num-1]);
+            }
+
+            Console.WriteLine();
+            Console.Write("Type a course number: ");
+
+            try
+            {
+                var userInput = Convert.ToInt32(Console.ReadLine());
+
+                if (userInput >= 1 && userInput <= 3)
+                {
+                    int i = 0;
+
+                    switch (userInput)
+                    {
+                        case 1:
+                            Console.WriteLine();
+                            foreach (var num in sectionsNameBeginners)
+                            {
+                                Console.WriteLine(i+1 + " - " + sectionsNameBeginners[i]);
+                                i++;
+                            }
+                            Console.WriteLine();
+                            Console.WriteLine("Type a Section Number");
+                            break;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                Console.WriteLine("Please enter a Course NUMBER");
+            }
+
+            
+
             ///<summary>
             /// CONTROL FLOW 1 - EXERCISES 1 to 4
             /// 
@@ -803,11 +882,13 @@ namespace CSharpFundamentals
             /// Write a program that reads a text file and displays the number of words.
             /// </summary>
 
+            /*
             #region Working with Files - Exercise 1
 
-            var numberOfWords;
+            var numberOfWords = 0;
 
             #endregion
+            */
 
             /// <summary>
             /// Write a program that reads a text file and displays the longest word in the file.
