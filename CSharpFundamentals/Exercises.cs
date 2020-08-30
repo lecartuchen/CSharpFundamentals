@@ -10,8 +10,6 @@ namespace CSharpFundamentals
             #region Initializations
             var courseNameList = new String[3] { "Beginner", "Intermediate", "Advanced" };
             var courseNumberList = new byte[3] { 1, 2, 3 };
-            byte sectionsTotalBeginner = 10;
-            byte sectionsTotalIntermediate = 6;
             var sectionsNameBeginners = new List<string>()
             {
                 "Introduction",
@@ -72,6 +70,65 @@ namespace CSharpFundamentals
                                 i++;
                             }
                             Console.WriteLine();
+                            Console.Write("Type a Section Number: ");
+
+                            userInput = Convert.ToInt32(Console.ReadLine());
+
+                            if (userInput >=1 && userInput <= sectionsNameBeginners.Count)
+                            {
+                                i = 0;
+
+                                switch (userInput)
+                                {
+                                    case 1:
+                                        Console.WriteLine("This is an introduction.....");
+                                        Console.WriteLine();
+                                        break;
+
+                                    case 2:
+                                        Console.WriteLine("This is an introduction to C# and .NET Framework.....");
+                                        Console.WriteLine();
+                                        break;
+
+                                    case 3:
+                                        Console.WriteLine("This is an introduction to Primitive Types and Expressions.....");
+                                        Console.WriteLine();
+                                        break;
+
+                                    case 4:
+                                        Console.WriteLine("This is an introduction to C# and .NET Framework.....");
+                                        Console.WriteLine();
+                                        break;
+
+                                    case 5:
+                                        var section5Ex1 = new Section5Exercise1();
+                                        section5Ex1();
+                                        break;
+                                }
+
+                            }
+
+                            break;
+
+                        case 2:
+                            Console.WriteLine();
+                            foreach (var num in sectionsNameIntermediate)
+                            {
+                                Console.WriteLine(i + 1 + " - " + sectionsNameIntermediate[i]);
+                                i++;
+                            }
+                            Console.WriteLine();
+                            Console.WriteLine("Type a Section Number");
+                            break;
+
+                        case 3:
+                            Console.WriteLine();
+                            foreach (var num in sectionsNameAdvanced)
+                            {
+                                Console.WriteLine(i + 1 + " - " + sectionsNameAdvanced[i]);
+                                i++;
+                            }
+                            Console.WriteLine();
                             Console.WriteLine("Type a Section Number");
                             break;
                     }
@@ -83,27 +140,19 @@ namespace CSharpFundamentals
                 Console.WriteLine("Please enter a Course NUMBER");
             }
 
-            
+
 
             ///<summary>
             /// CONTROL FLOW 1 - EXERCISES 1 to 4
-            /// 
+            /// </summary>
+            
+            /// <summary>
             /// CF1-Ex1
             /// Ask the user for a number between 1 and 10
             /// Display "Valid" if within 1 and 10 and "Invalid" otherwise.
             /// </summary>
 
-            #region Control Flow 1 - Exercise 1
-
-            /*
-            Console.Write("Please enter a number: ");
-
-            var ex1UserInfo = Console.ReadLine();
-
-            var result = OneToTen(ex1UserInfo);
-            Console.WriteLine(result);
-            */
-            #endregion
+            
 
             ///<summary>
             /// CF1-Ex2
@@ -882,13 +931,13 @@ namespace CSharpFundamentals
             /// Write a program that reads a text file and displays the number of words.
             /// </summary>
 
-            /*
+
             #region Working with Files - Exercise 1
-
+            /*
             var numberOfWords = 0;
-
-            #endregion
             */
+            #endregion
+
 
             /// <summary>
             /// Write a program that reads a text file and displays the longest word in the file.
